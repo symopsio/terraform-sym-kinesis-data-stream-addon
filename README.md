@@ -23,3 +23,45 @@ module "runtime_connector" {
   }
 }
 ```
+
+<!-- BEGIN_TF_DOCS -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.7 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 3.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 3.0 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [aws_iam_policy.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
+| [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
+| [aws_region.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region) | data source |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_environment"></a> [environment](#input\_environment) | An environment qualifier for the resources this module creates, to support a Terraform SDLC. The environment value is also the tag value that secrets must be tagged with to be accessible by this addon. | `string` | n/a | yes |
+| <a name="input_stream_arns"></a> [stream\_arns](#input\_stream\_arns) | List of Data Stream ARNs allowed to be accessed by the Sym Runtime. | `list(string)` | `[]` | no |
+| <a name="input_tag_name"></a> [tag\_name](#input\_tag\_name) | Name of the tag that resources must be tagged with to be accessible by this addon. | `string` | `"SymEnv"` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | Additional tags to apply to resources | `map(string)` | `{}` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| <a name="output_policy_arn"></a> [policy\_arn](#output\_policy\_arn) | Kinesis Firehose's access policy arn |
+<!-- END_TF_DOCS -->
