@@ -1,3 +1,6 @@
+# Deprecation Warning
+The `symopsio/kinesis-data-stream-addon/sym` module is deprecated as of September 30, 2022. Please migrate to [`symopsio/kinesis-data-stream-addon/aws`](https://registry.terraform.io/modules/symopsio/secretsmgr-addon/aws/latest). This should be done automatically if you are have migrated to the `symopsio/runtime-connector/aws` module.
+
 # kinesis-data-stream-addon
 
 The `kinesis-data-stream-addon` module adds AWS Kinesis Data Stream access to a Sym runtime connector module.
